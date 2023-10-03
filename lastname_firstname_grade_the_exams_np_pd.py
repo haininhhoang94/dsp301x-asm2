@@ -20,6 +20,7 @@ if len(sys.argv) == 1:
 else:
     arg1 = sys.argv[1]
 
+
 # NOTE: Use functions with global variable instead of return something is because our
 # functions doesn't really serve as traditional input-output data, instead it is just
 # a way to refactoring our code
@@ -48,9 +49,6 @@ def read_file():
         except FileNotFoundError:
             print("File cannot be found.")
         pass
-
-
-read_file()
 
 
 # 2.1. Reports all line in file
@@ -126,9 +124,6 @@ def analyzing():
             )
         )
     pass
-
-
-analyzing()
 
 
 # 3. Grading based on the following criteria
@@ -251,9 +246,6 @@ def grading():
     pass
 
 
-grading()
-
-
 # 4. Store grades
 def print_and_output():
     print("\n**** SAVING ****\n")
@@ -275,4 +267,12 @@ def print_and_output():
     pass
 
 
-print_and_output()
+# Main function
+# checks if the special variable `__name__` is equal to `"__main__"`. This condition is
+# true when the script is run directly, and false when the script is imported as a
+# module.
+if __name__ == "__main__":
+    read_file()
+    analyzing()
+    grading()
+    print_and_output()
